@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title> 
+        <style>
+            body
+            { 
+                background-color:beige; 
+            } 
+
+
+        </style>
+    </head>
+    <body>
+        {% for message in messages %}
+        <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+        <strong>message:</strong> {{message}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+        </div> 
+        {% endfor %}
+        
+       <h3>signup</h3> 
+       <form action="/signup" method="post">
+        {% csrf_token %}
+        <label for="">Username</label>
+        <input type="text" id="username" name="username" placeholder="Enter username" required>
+         <br>
+
+        <label for="">Firstname</label>
+        <input type="text" id="fname" name="fname" placeholder="Enter Firstname" required>
+        <br>
+
+        <label for="">Lastname</label>
+        <input type="text" id="lname" name="lname" placeholder="Enter Lastname" required>
+        <br>
+
+        <label for="">EmailAddress</label>
+        <input type="email" id="email" name="email" placeholder="Enter EmailAddress" required> 
+        <br>
+
+        <label for="">Password</label>
+        <input type="password" id="pass1" name="pass1" placeholder="Enter password" required> 
+        <br>
+
+        <label for="">Confirm Password</label>
+        <input type="password" id="pass2" name="pass2" placeholder="Verify password" required>  
+        <br>
+
+        <button type="submit" style="display: block; margin: 0 auto; background-color: #3498db; color: white; padding: 10px 20px; border: none; border-radius: 5px; text-align: center; text-decoration: none; font-size: 16px; cursor: pointer;">Sign Up</button>
+
+
+       </form>
+       
+    </body>
+</html>
